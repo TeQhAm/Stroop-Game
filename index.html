@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Stroop Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ---------- Écran d'accueil ---------- -->
+<div id="accueil" class="screen active">
+
+  <!-- Logo animé -->
+  <div class="logo-container">
+    <div class="logo">SG</div>
+  </div>
+
+  <!-- Titre -->
+  <h1>Stroop Game</h1>
+
+  <!-- Règles -->
+  <p class="regles">
+    Règles :<br>
+    1. Le mot affiché est un nom de couleur.<br>
+    2. La couleur du texte est aléatoire.<br>
+    3. Cliquez sur le bouton correspondant à la couleur du texte.<br>
+    4. Plus vous êtes rapide, plus vous marquez de points !
+  </p>
+
+  <!-- Boutons Start et Classement -->
+  <div class="boutons-accueil">
+    <button class="btn-start" onclick="demarrerCompteARebours()">Start</button>
+    <button class="btn-classement" onclick="afficherClassement()">Classement</button>
+  </div>
+</div>
+
+<!-- ---------- Compte à rebours ---------- -->
+<div id="compteARebours" class="screen">
+  <div id="compte"></div>
+</div>
+
+<!-- ---------- Écran du jeu ---------- -->
+<div id="jeu" class="screen">
+  <div class="barre">
+    <div id="score">Score : 0</div>
+    <div id="timer">Temps : 30s</div>
+    <div id="bestScore"></div>
+  </div>
+  <div id="mot">MOT</div>
+  <div id="boutons"></div>
+</div>
+
+<!-- ---------- Écran fin de partie ---------- -->
+<div id="fin" class="screen">
+  <div id="scoreFinal"></div>
+  <input type="text" id="nomJoueur" placeholder="Entrez votre nom">
+  <button onclick="validerNom()">Valider</button>
+</div>
+
+<!-- ---------- Écran classement ---------- -->
+<div id="classement" class="screen">
+  <h2>Classement Général</h2>
+  <div id="listeScores"></div>
+  <button onclick="retourAccueil()">Retour</button>
+</div>
+
+<!-- ---------- JavaScript ---------- -->
+<script src="stroop.js" defer></script>
+</body>
+</html>
+

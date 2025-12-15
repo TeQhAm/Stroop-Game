@@ -1,0 +1,182 @@
+/* ---------- Général ---------- */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #81D4FA, #4FC3F7);
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.screen {
+  display: none;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* ---------- Logo ---------- */
+.logo-container {
+  margin-bottom: 20px;
+}
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #FF7043;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* ---------- Titre ---------- */
+h1 {
+  font-size: 64px;
+  margin: 20px 0;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ---------- Règles ---------- */
+.regles {
+  font-size: 20px;
+  max-width: 700px;
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* ---------- Boutons accueil ---------- */
+.boutons-accueil {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-start, .btn-classement {
+  font-size: 24px;
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-start {
+  background-color: #FF7043;
+  color: white;
+}
+.btn-start:hover {
+  background-color: #FF5722;
+  transform: scale(1.1);
+}
+
+.btn-classement {
+  background-color: #4FC3F7;
+  color: white;
+}
+.btn-classement:hover {
+  background-color: #039BE5;
+  transform: scale(1.1);
+}
+
+/* ---------- Barre Score et Timer ---------- */
+.barre {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+/* ---------- Mot à afficher ---------- */
+#mot {
+  font-size: 80px;
+  margin: 40px 0;
+}
+
+/* ---------- Boutons couleurs ---------- */
+#boutons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-couleur {
+  width: 120px;
+  height: 60px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-couleur:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ---------- Input et boutons ---------- */
+input {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  text-align: center;
+}
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ---------- Compte à rebours ---------- */
+#compte {
+  font-size: 100px;
+  font-weight: bold;
+  color: #FF5722;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+/* ---------- Meilleur score ---------- */
+#bestScore {
+  font-size: 20px;
+  color: #FFEB3B;
+  font-weight: bold;
+}
+
+/* ---------- Liste classement ---------- */
+#listeScores {
+  max-width: 600px;
+  text-align: left;
+  margin: 20px auto;
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  border-radius: 20px;
+}
+#listeScores div {
+  margin: 5px 0;
+}
+
