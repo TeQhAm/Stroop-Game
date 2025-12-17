@@ -2,13 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stroop Game</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- ---------- Écran d'accueil ---------- -->
-<div id="accueil" class="screen active">
+<div id="accueil" class="screen screen-center active">
 
   <!-- Logo animé -->
   <div class="logo-container">
@@ -35,12 +36,12 @@
 </div>
 
 <!-- ---------- Compte à rebours ---------- -->
-<div id="compteARebours" class="screen">
+<div id="compteARebours" class="screen screen-center">
   <div id="compte"></div>
 </div>
 
 <!-- ---------- Écran du jeu ---------- -->
-<div id="jeu" class="screen">
+<div id="jeu" class="screen screen-game">
   <div class="barre">
     <div id="score">Score : 0</div>
     <div id="timer">Temps : 30s</div>
@@ -51,21 +52,21 @@
 </div>
 
 <!-- ---------- Écran fin de partie ---------- -->
-<div id="fin" class="screen">
+<div id="fin" class="screen screen-center">
   <div id="scoreFinal"></div>
   <input type="text" id="nomJoueur" placeholder="Entrez votre nom">
   <button onclick="validerNom()">Valider</button>
 </div>
 
 <!-- ---------- Écran classement ---------- -->
-<div id="classement" class="screen">
+<div id="classement" class="screen screen-center">
   <h2>Classement Général</h2>
   <div id="listeScores"></div>
   <button onclick="retourAccueil()">Retour</button>
 </div>
 
 <!-- ---------- JavaScript ---------- -->
-<script src="stroop.js" defer></script>
+<script src="main.js" defer></script>
 </body>
 </html>
 
