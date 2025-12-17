@@ -163,15 +163,4 @@ async function afficherClassement() {
 }
 
 function retourAccueil(){
-  document.getElementById('classement').classList.remove("active");
-  document.getElementById('accueil').classList.add("active");
-}
-
-// Exposer les fonctions pour les boutons HTML
-window.demarrerCompteARebours = demarrerCompteARebours;
-window.validerNom = validerNom;
-window.afficherClassement = afficherClassement;
-window.retourAccueil = retourAccueil;
-
-
-
+  document.getElementById('classement').classL
