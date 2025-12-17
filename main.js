@@ -123,17 +123,33 @@ async function validerNom() {
 }
 
 // Classement
-function afficherClassement(){
+async function afficherClassement() {
   document.getElementById('classement').classList.add("active");
   document.getElementById('accueil').classList.remove("active");
+
   const listeDiv = document.getElementById('listeScores');
   listeDiv.innerHTML = "";
-  const scores = JSON.parse(localStorage.getItem("scores")||"[]");
-  if(scores.length===0){ listeDiv.textContent="Aucun score enregistré."; return; }
-  scores.forEach((s,i)=>{
-    const div=document.createElement('div');
-    div.textContent=`${i+1}. ${s.nom} — ${s.score}`;
+
+  const q = query(
+    collection(db, "scores"),
+    orderBy("score", "desc"),
+    limit(10)
+  );
+
+  const snapshot = await getDocs(q);
+
+  if (snapshot.empty) {
+    listeDiv.textContent = "Aucun score enregistré.";
+    return;
+  }
+
+  let i = 1;
+  snapshot.forEach(doc => {
+    const s = doc.data();
+    const div = document.createElement('div');
+    div.textContent = `${i}. ${s.nom} — ${s.score}`;
     listeDiv.appendChild(div);
+    i++;
   });
 }
 
@@ -142,4 +158,5 @@ function retourAccueil(){
   document.getElementById('classement').classList.remove("active");
   document.getElementById('accueil').classList.add("active");
 }
+
 
