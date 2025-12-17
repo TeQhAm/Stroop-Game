@@ -107,13 +107,17 @@ function finDePartie(){
 }
 
 // Valider nom et sauvegarder score
-function validerNom(){
+async function validerNom() {
   const nom = document.getElementById('nomJoueur').value.trim();
-  if(!nom) return;
-  let scores = JSON.parse(localStorage.getItem("scores")||"[]");
-  scores.push({nom:nom,score:score});
-  scores.sort((a,b)=>b.score-a.score);
-  localStorage.setItem("scores",JSON.stringify(scores));
+  if (!nom) return;
+
+  // Envoi du score sur Firestore
+  await addDoc(collection(db, "scores"), {
+    nom: nom,
+    score: score,
+    date: new Date()
+  });
+
   document.getElementById('fin').classList.remove("active");
   afficherClassement();
 }
@@ -138,3 +142,4 @@ function retourAccueil(){
   document.getElementById('classement').classList.remove("active");
   document.getElementById('accueil').classList.add("active");
 }
+
