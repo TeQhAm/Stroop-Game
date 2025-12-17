@@ -159,4 +159,8 @@ function retourAccueil(){
   document.getElementById('accueil').classList.add("active");
 }
 
+window.validerNom = validerNom;
+window.afficherClassement = afficherClassement;
+window.retourAccueil = retourAccueil;
+
 
